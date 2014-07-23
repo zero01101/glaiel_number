@@ -38,6 +38,7 @@
             this.lblThisMany = new System.Windows.Forms.Label();
             this.lblShebang = new System.Windows.Forms.Label();
             this.lblInstant = new System.Windows.Forms.Label();
+            this.zynga = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblNumber
@@ -119,11 +120,22 @@
             this.lblInstant.Size = new System.Drawing.Size(0, 13);
             this.lblInstant.TabIndex = 7;
             // 
+            // zynga
+            // 
+            this.zynga.AutoSize = true;
+            this.zynga.Location = new System.Drawing.Point(424, 12);
+            this.zynga.Name = "zynga";
+            this.zynga.Size = new System.Drawing.Size(57, 17);
+            this.zynga.TabIndex = 8;
+            this.zynga.Text = "zynga!";
+            this.zynga.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 142);
+            this.ClientSize = new System.Drawing.Size(598, 141);
+            this.Controls.Add(this.zynga);
             this.Controls.Add(this.lblInstant);
             this.Controls.Add(this.lblShebang);
             this.Controls.Add(this.lblThisMany);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.Label lblThisMany;
         private System.Windows.Forms.Label lblShebang;
         private System.Windows.Forms.Label lblInstant;
+        private System.Windows.Forms.CheckBox zynga;
     }
 }
 

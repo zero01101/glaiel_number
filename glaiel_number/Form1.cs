@@ -16,18 +16,21 @@ namespace glaiel_number
         bool go = false;
         Stopwatch thewholeshebang = new Stopwatch();
         Stopwatch instant = new Stopwatch();
+        int buyins = 0;        
 
         private void Form1_Load(object sender, EventArgs e)
         {            
             lblNumber.Text = number.ToString();
             lblNumberGoUp.Text = numberGoUp.ToString() + "x";
             lblThisMany.Text = numberGoUpCost.ToString();
+            this.Text = "the more you wait the more times you can click";
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
             if (!(go))
             {
+                zynga.Enabled = false;
                 number = 0;
                 numberGoUp = 0.1;
                 numberGoUpCost = 10;
@@ -39,6 +42,8 @@ namespace glaiel_number
             }
             else if (go)
             {
+                buyins = 0;
+                zynga.Enabled = true;
                 go = false;
                 btnGo.Text = "go";
                 thewholeshebang.Stop();
@@ -72,11 +77,13 @@ namespace glaiel_number
 
         private void btnNumberGoUp_Click(object sender, EventArgs e)
         {
+            buyins++;
             instant.Stop();
             instant.Reset();
             number -= Math.Floor(numberGoUpCost);
             numberGoUp += Math.Sqrt(numberGoUp * 2) / 7;
             numberGoUpCost += Math.Sqrt(numberGoUpCost * 0.4) * 4.75;
+            if (zynga.Checked) numberGoUpCost += Math.Sqrt(buyins);
             btnNumberGoUp.Enabled = false;
             instant.Start();
         }
