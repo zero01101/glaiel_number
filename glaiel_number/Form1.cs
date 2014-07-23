@@ -81,7 +81,7 @@ namespace glaiel_number
             instant.Stop();
             instant.Reset();
             number -= Math.Floor(numberGoUpCost);
-            numberGoUp += Math.Sqrt(numberGoUp * 2) / 7;
+            numberGoUp += Math.Sqrt(numberGoUp * 2) / 9;
             numberGoUpCost += Math.Sqrt(numberGoUpCost * 0.4) * 4.75;
             if (zynga.Checked) numberGoUpCost += Math.Sqrt(buyins);
             btnNumberGoUp.Enabled = false;
